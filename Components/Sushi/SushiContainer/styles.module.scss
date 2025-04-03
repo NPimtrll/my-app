@@ -1,0 +1,11 @@
+@import '../../Sushi/assets/styles/foundation';
+
+.container {
+    width: calc(100vw - $container-margin-x * 2);
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

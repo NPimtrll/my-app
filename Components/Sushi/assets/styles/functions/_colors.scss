@@ -1,0 +1,4 @@
+@function vertical-gradient($from-color, $to-color) {
+    // from bottom to top
+    @return linear-gradient(to top, $from-color, $to-color);
+}

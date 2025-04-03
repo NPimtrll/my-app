@@ -1,0 +1,171 @@
+@use "sass:map";
+@use "sass:string";
+
+@import '../../Sushi/assets/styles/foundation';
+
+$icons: (
+    "access-alarm",
+    "account-circle",
+    "add",
+    "aiting",
+    "alert",
+    "approve",
+    "approves-filled",
+    "approves",
+    "arning",
+    "assign",
+    "attach-money",
+    "attachment",
+    "auditor",
+    "back-android",
+    "back-ios",
+    "back",
+    "bookmark",
+    "bookmarks-filled",
+    "business",
+    "calendar",
+    "callcenter",
+    "cancel-filled",
+    "category",
+    "check-list",
+    "checkbox-selected",
+    "checkbox",
+    "checked",
+    "circle-filled",
+    "classroom",
+    "close-or-reject",
+    "company",
+    "content-copy",
+    "dash",
+    "date",
+    "decrease",
+    "delete",
+    "doc",
+    "document-1",
+    "document",
+    "documents",
+    "down",
+    "download",
+    "eb",
+    "edit-filled",
+    "edit",
+    "email",
+    "esg",
+    "euro",
+    "exit",
+    "external-link",
+    "eye-close",
+    "eye",
+    "fax",
+    "file-upload",
+    "fill-color",
+    "filter",
+    "fire",
+    "folder-open",
+    "github",
+    "help",
+    "home-filled",
+    "home",
+    "increase",
+    "information",
+    "language",
+    "link",
+    "location",
+    "lock",
+    "logout",
+    "main-component-filled",
+    "market",
+    "maximize-arrow",
+    "maximize-filled",
+    "minimize-arrow",
+    "minimize-filled",
+    "mobile-phone",
+    "more-android",
+    "more-hamburger",
+    "more-ios",
+    "mouse-cursor-filled",
+    "move",
+    "news-filled",
+    "news",
+    "next-big",
+    "next",
+    "notification-filled",
+    "notification",
+    "one-report",
+    "page-filled",
+    "paper-clip",
+    "pdf",
+    "phone-call-filled",
+    "phone",
+    "picture",
+    "printer",
+    "profile-filled",
+    "profile",
+    "push-pin",
+    "radio-button-selected",
+    "radio-button",
+    "reader",
+    "refresh",
+    "search",
+    "set-link",
+    "set",
+    "setting",
+    "settings-suggest",
+    "sorting",
+    "speak",
+    "star-filled",
+    "star",
+    "status-circle",
+    "suitcase",
+    "supervisor",
+    "sushi",
+    "table-view",
+    "table",
+    "terrain",
+    "thumb-up-filled",
+    "thumbnail",
+    "time",
+    "txt",
+    "unchange",
+    "underline",
+    "up",
+    "video",
+    "vpn-key",
+    "waiting",
+    "warning",
+    "web",
+    "xml",
+    "zoom-in",
+    "zoom-out"
+);
+
+$icon-sizes: (
+    "extra-small": 8px,
+    "small": 12px,
+    "medium": 16px,
+    "large": 24px,
+    "extra-large": 32px,
+);
+
+@each $icon in $icons {
+    .#{$icon} {
+        display: inline-block;
+        mask-image: string.unquote("url('../assets/icons/#{$icon}.svg')");
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+    }
+}
+
+@each $icon-size-name, $icon-size-value in $icon-sizes {
+    .#{$icon-size-name} {
+        width: $icon-size-value;
+        height: $icon-size-value;
+    }
+}
+
+@each $variant-key, $variant-properties in $preset-colors {
+    .#{$variant-key} {
+        background-color: map.get($variant-properties, "icon-color");
+    }
+}

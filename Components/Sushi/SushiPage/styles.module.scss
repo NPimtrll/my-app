@@ -1,0 +1,19 @@
+@import '../../Sushi/assets/styles/foundation';
+
+.page {
+    margin-top: $page-margin-top;
+    display: flex;
+    flex-direction: column;
+
+    &.with-toolbar {
+        margin-top: calc($toolbar-height + $page-margin-top);
+    }
+
+    .title {
+        font-family: $primary-font;
+        padding: 0 4px;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1.45;
+    }
+}

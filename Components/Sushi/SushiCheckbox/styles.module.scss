@@ -1,0 +1,51 @@
+@use 'sass:string';
+
+@import '../../Sushi/assets/styles/foundation';
+
+.checkbox {
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 8px;
+    cursor: pointer;
+
+    & > input[type="checkbox"] {
+        visibility: hidden;
+        position: absolute;
+        top: -30px;
+        left: -30px;
+    }
+
+    & > .icon {
+        width: 16px;
+        height: 16px;
+        aspect-ratio: 1;
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+
+        &.checked {
+            background-image: string.unquote("url('../assets/forms/checkbox_checked.svg')");
+
+            &.disabled {
+                background-image: string.unquote("url('../../assets/forms/checkbox_checked_disabled')");
+                cursor: default;
+            }
+        }
+    
+        &.unchecked {
+            background-image: string.unquote("url('../assets/forms/checkbox_unchecked.svg')");
+
+            &.disabled {
+                background-image: string.unquote("url('../../assets/forms/checkbox_unchecked_disabled')");
+                cursor: default;
+            }
+        }
+    }
+
+}

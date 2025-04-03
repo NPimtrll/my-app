@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+         body {
+            box-sizing: border-box;
+         }
+
+        .overall {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .ps-container {
+            width: 614px;
+            background-color: white;
+        }
+
+        .pillar-line:nth-child(even) {
+            background-color: #fbfbfb;
+        }
+
+        .score-line {
+            padding: 13.5px 16px;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+        }
+
+        .score-line:hover {
+            background-color: rgba(255, 164, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .score-line > div {
+            background-color:#e5e5e6;
+            height: 12px;
+            flex-grow: 11;
+            position: relative;
+        }
+
+        .score-line > span {
+            flex-grow: 1;
+            padding: 0 0 0 24px;
+            width: 32px;
+            line-height: 1;
+        }
+
+        .capsule {
+            color: white;
+            border-radius: 20px;
+            position: absolute;
+            display: block;
+            box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .capsule.your-company {
+            background-color: #5f6062;
+            width: 40px;
+            height: 20px;
+            text-align: center;
+            top: -4px;
+        }
+
+        .capsule.average {
+            background-color: #FFA400;
+            width: 36px;
+            height: 18px;
+            top: -3px;
+        }
+
+        .capsule.top {
+            background-color: #0FBC55;
+            width: 36px;
+            height: 18px;
+            top: -3px;
+        }
+
+
+        .score-numbers {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            margin-top: 28px;
+            width: 100%;
+            border-top: 1px solid #9DA6AD;
+            font-size: 10px;
+            color: #5f6062;
+            padding-top: 6px;
+        }
+
+        .score-numbers .label {
+            position: absolute;
+            top:20%;
+            left: 110%;
+            font-weight: bold;
+        }
+
+        .pillar-legend {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .pillar-legend > .legend-item {
+           font-size: 14px;
+           margin-left: 8px;
+           display: flex;
+           flex-direction: row;
+        }
+
+        .legend-capsule {
+            width: 24px;
+            height: 12px;
+            border-radius: 8px;
+            margin-right: 8px;
+        }
+
+        .tooltip-pillar {
+            position: absolute;
+            color: #fff;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        .tooltip-item {
+            display: flex;
+            flex-direction:row;
+            padding: 4px;   
+        }
+
+        .item-name {
+            width: 100%;
+        }
+
+        .item-score {
+            margin-left: 4px;
+            font-weight: bold;
+        }
+
+        .tooltip-item .color-box {
+            width: 18px;
+            height: 18px;
+            border:1px solid #fff;
+            margin-right: 8px;
+        }
+
+       
+        .your-company { background-color: #5f6062}
+        .average { background-color: #FFA400;}
+        .top { background-color: #0FBC55;}
+
+    </style>
+    <meta charset="UTF-8" />
+    <title>Pillar</title>
+</head>
+<body>
+    <div class="overall">
+        <div>
+            <img src="assets/images/Pillar Image.svg" alt="">
+        </div>
+        <div class="ps-container">
+            <div class="pillar-line">
+                <div class="score-line">
+                    <div>
+                        <div class="capsule average" style="left: 5%;"></div>
+                        <div class="capsule top" style="left: 50%;"></div>
+                        <div class="capsule your-company" style="left: 20%;"><span>60</span></div>
+                    </div>
+                    <span>Sector</span>
+                </div>
+                <div class="score-line">
+                    <div>
+                        <div class="capsule average" style="left: 5%;"></div>
+                        <div class="capsule top" style="left: 50%;"></div>
+                        <div class="capsule your-company" style="left: 20%;"><span>60</span></div>
+                    </div>
+                    <span>SET</span>
+                </div>
+            </div>
+            <div class="pillar-line">
+                <div class="score-line">
+                    <div>
+                        <div class="capsule average" style="left: 5%;"></div>
+                        <div class="capsule top" style="left: 50%;"></div>
+                        <div class="capsule your-company" style="left: 20%;"><span>60</span></div>
+                    </div>
+                    <span>Sector</span>
+                </div>
+                <div class="score-line">
+                    <div>
+                        <div class="capsule average" style="left: 5%;"></div>
+                        <div class="capsule top" style="left: 50%;"></div>
+                        <div class="capsule your-company" style="left: 20%;"><span>60</span></div>
+                    </div>
+                    <span>SET</span>
+                </div>
+            </div>
+            <div class="pillar-line">
+                <div class="score-line">
+                    <div>
+                        <div class="capsule average" style="left: 5%;"></div>
+                        <div class="capsule top" style="left: 50%;"></div>
+                        <div class="capsule your-company" style="left: 20%;"><span>60</span></div>
+                    </div>
+                    <span>Sector</span>
+                </div>
+                <div class="score-line">
+                    <div>
+                        <div class="capsule average" style="left: 5%;"></div>
+                        <div class="capsule top" style="left: 50%;"></div>
+                        <div class="capsule your-company" style="left: 20%;"><span>60</span></div>
+                    </div>
+                    <span>SET</span>
+                </div>
+            </div>
+            <div class="pillar-line">
+                <div class="score-line">
+                    <div>
+                        <div class="capsule average" style="left: 5%;"></div>
+                        <div class="capsule top" style="left: 50%;"></div>
+                        <div class="capsule your-company" style="left: 20%;"><span>60</span></div>
+                    </div>
+                    <span>Sector</span>
+                </div>
+                <div class="score-line">
+                    <div>
+                        <div class="capsule average" style="left: 5%;"></div>
+                        <div class="capsule top" style="left: 50%;"></div>
+                        <div class="capsule your-company" style="left: 20%;"><span>60</span></div>
+
+                        <div class="score-numbers">
+                            <span>0</span>
+                            <span>25</span>
+                            <span>50</span>
+                            <span>75</span>
+                            <span>100</span>
+                            <span class="label">คะแนน</span>
+                        </div>
+                    </div>
+                    <span>SET</span>
+                </div>
+            </div>
+            
+            <div class="pillar-legend">
+                <div class="legend-item">
+                    <div class="legend-capsule your-company"></div><span>Your Company</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-capsule average"></div><span>Average</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-capsule top"></div><span>Top 5</span>
+                </div>
+            </div>
+
+            <div class="tooltip-pillar">
+                <div class="tooltip-item">
+                    <div class="color-box your-company"></div>
+                    <span class="item-name">Your Company :</span>
+                    <span class="item-score">30</span>
+                </div>
+                <div class="tooltip-item">
+                    <div class="color-box average"></div>
+                    <span class="item-name">Average :</span>
+                    <span class="item-score">30</span>
+                </div>
+                <div class="tooltip-item">
+                    <div class="color-box top"></div>
+                    <span class="item-name">Top SET :</span>
+                    <span class="item-score">30</span>
+                </div>
+            </div>
+        </div>  
+    </div>
+</body>
+</html>

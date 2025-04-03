@@ -1,0 +1,39 @@
+@mixin ordered-list {
+    ol {
+        counter-reset: section;
+        margin: 0;
+        padding: 0;
+    }
+    
+    ol > li {
+        counter-increment: section;
+        list-style-type: none;
+        line-height: 1.45;
+
+        & + li {
+            margin-top: 1em;
+        }
+    }
+    
+    ol > li:before {
+        content: counter(section) ". ";
+    }
+
+    ol ol {
+        counter-reset: subsection;
+        margin-left: 20px;
+    }
+
+    ol ol > li {
+        counter-increment: subsection;
+        margin-top: 1em;
+
+        &:last-child {
+            margin-bottom: 1em;
+        }
+    }
+
+    ol ol > li:before {
+        content: counter(section) "." counter(subsection) " ";
+    }
+}

@@ -1,0 +1,53 @@
+@use "sass:map";
+
+@import '../../Sushi/assets/styles/foundation';
+
+.button {
+    min-width: 80px;
+}
+
+@each $variant-key, $variant-properties in $preset-colors {
+    .#{$variant-key} {
+        border: map.get($variant-properties, "border");
+        border-radius: $radius-md;
+        background: map.get($variant-properties, "background");
+        color: map.get($variant-properties, "text-color");
+        font-weight: $font-bold;
+        font-family: $primary-font;
+        line-height: 145%;
+        font-size: $text-md;
+        padding: 6px 8px;
+        text-align: center;
+        border: map.get($variant-properties, "border");
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 8px;
+        justify-content: space-between;
+        cursor: pointer;
+        
+        &:not(:disabled):hover {
+            border: map.get($variant-properties, "hover-border");
+            background: map.get($variant-properties, "hover-background");
+            color: map.get($variant-properties, "hover-text-color");
+
+            &:active {
+                border: map.get($variant-properties, "pressed-border");
+                background: map.get($variant-properties, "pressed-background");
+                color: map.get($variant-properties, "pressed-text-color");
+            }
+        }
+
+        &[disabled],&:disabled {
+            border: map.get($variant-properties, "disabled-border");
+            background: map.get($variant-properties, "disabled-background");
+            color: map.get($variant-properties, "disabled-text-color");
+            cursor: default;
+        }
+
+    }
+}
+
+.center {
+    justify-content: center !important;
+}

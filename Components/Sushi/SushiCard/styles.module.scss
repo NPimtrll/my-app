@@ -1,0 +1,46 @@
+@import '../../Sushi/assets/styles/foundation';
+
+.card {
+    width: 100%;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+
+    & > .header {
+        font-family: $primary-font;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 20px;
+        padding: 8px 16px;
+        display: flex;
+        flex-direction: row;
+        justify-items: flex-start;
+        text-align: left;
+    }
+
+    & > .body {
+        font-family: $primary-font;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        padding: 8px 16px;
+        display: block;
+        text-align: left;
+
+        @include ordered-list;
+    }
+
+    & > .footer {
+        display: block;
+        padding: 8px 16px 16px 16px;
+        font-family: $primary-font;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+
+        &.with-separator {
+            border-top: 1px solid hsla(0, 0%, 0%, 0.06);
+        }
+    }
+}

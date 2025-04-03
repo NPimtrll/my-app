@@ -1,0 +1,41 @@
+@import '../../Sushi/assets/styles/foundation';
+
+.textfield {
+  --backgroundColor: #{$primary-white};
+  --color: #{$primary-black};
+  --pointer: text;
+  --paddingBottom: 6px;
+  --borderBottom: none;
+  --box-shadow: 0 0 0 1px #{$bg-opacity-10};
+  --pointerEvent: auto;
+  --border-radius: #{$radius-md};
+  --margin-bottom: 20px;
+
+  &.-error {
+    --margin-bottom: 0px;
+    --color: #{#b60000};
+    --paddingBottom: 4px;
+    --borderBottom: solid 2px #{#b60000};
+  }
+
+  &.-disable,
+  &:disabled {
+    --backgroundColor: #{$bg-opacity-10};
+    --color: #{$bg-opacity-35};
+    --pointerEvent: none;
+  }
+
+  &.-viewonly {
+    --backgroundColor: #{$primary-white};
+    --borderBottom: solid 1px #{$bg-opacity-10};
+    --paddingBottom: 5px;
+    --box-shadow: none;
+    --pointerEvent: none;
+    --border-radius: 0px;
+  }
+
+  &:focus {
+    --paddingBottom: 4px;
+    --borderBottom: solid 2px #{$primary-orange};
+  }
+}

@@ -1,0 +1,29 @@
+@import '../../../Sushi/assets/styles/foundation';
+
+.box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  
+  .chart {
+    display: block;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid hsla(220, 2%, 90%, 1);
+    background-color: hsla(0, 0%, 100%, 1);
+  }
+  .groupChart {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(25%, auto));
+    gap: 16px;
+  }
+
+    .chartTitle {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+      font-size: $text-lg;
+      color: $primary-black;
+      margin-bottom: 8px;
+    }
+}
